@@ -1,0 +1,36 @@
+{
+  "name": "semester-2-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css",
+    "dev": "npm run watch & live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EF-Pami/semester-2-project.git"
+  },
+  "keywords": [
+    "semester-project-2",
+    "css-framework",
+    "sass",
+    "bootstrap",
+    "JavaScript"
+  ],
+  "author": "EF-Pami",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EF-Pami/semester-2-project/issues"
+  },
+  "homepage": "https://github.com/EF-Pami/semester-2-project#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.70.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
+}
