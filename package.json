@@ -8,7 +8,8 @@
     "build": "sass src/scss:dist/css",
     "watch": "sass --watch src/scss:dist/css",
     "dev": "npm run watch & live-server",
-    "format": "prettier -w src/js/**/*.js"
+    "format": "prettier -w src/js/**/*.js",
+    "lint": "eslint src/js/**/*.js"
   },
   "repository": {
     "type": "git",
