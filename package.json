@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test-unit",
+    "test": "npm run test-unit && npm run test-e2e",
     "test-unit": "jest",
+    "test-e2e": "cypress open",
     "build": "sass src/scss:dist/css",
     "watch": "sass --watch src/scss:dist/css",
     "dev": "npm run watch & live-server",
