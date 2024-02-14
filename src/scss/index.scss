@@ -1,0 +1,19 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  background-color: beige;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 290px 20px 20px;
+}
+
+.navbar {
+  --bs-navbar-padding-x: 15px;
+  --bs-navbar-brand-hover-color: red;
+  --bs-navbar-brand-font-size: 32px;
+}
+
+.navbar-brand {
+  margin-right: 40px;
+  margin-left: 20px;
+}
