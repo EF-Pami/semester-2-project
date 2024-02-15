@@ -49,15 +49,27 @@
               >
             </li>
           </ul>
-          <form class="d-flex">
-            <a href="./profile/login.html">
-              <button class="btn btn-primary" type="button">Login</button>
-            </a>
-            <a href="./profile/register.html">
-              <button class="btn btn-primary" type="button">Sign up</button>
-            </a>
-          </form>
         </div>
+        <form class="d-flex-end">
+          <a href="./profile/login.html">
+            <button class="btn btn-primary" type="button">Login</button>
+          </a>
+          <a href="./profile/register.html">
+            <button class="btn btn-primary" type="button">Sign up</button>
+          </a>
+        </form>
+
+        <form class="d-flex g-4">
+          <a href="./listings.html">
+            <img src="assets/All items category.jpg" alt="All listings" />
+          </a>
+          <a href="#Popular Listings">
+            <img src="assets/Popular items category.jpg" alt="" />
+          </a>
+          <a href="#soon to finish Listings">
+            <img src="assets/Finish soon category.jpg" alt="" />
+          </a>
+        </form>
       </nav>
     </header>
     <main>
@@ -139,7 +151,7 @@
         </div>
       </section>
 
-      <section>
+      <section id="Popular Listings">
         <div class="listing-container">
           <h2>Popular Listings</h2>
           <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -206,7 +218,7 @@
         </div>
       </section>
 
-      <section>
+      <section id="soon to finish Listings">
         <div class="listing-container">
           <h2>Soon to finish Listings</h2>
           <div class="row row-cols-1 row-cols-md-3 g-4">
