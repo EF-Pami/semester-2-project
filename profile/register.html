@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register page/SNAPBID</title>
+    <link rel="stylesheet" href="../dist/css/index.css" />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand" href="../index.html">
+          <img
+            src="../assets/170690459_padded_logo.png"
+            alt="site logo"
+            style="width: 250px"
+            class="img-fluid"
+          />
+        </a>
+        <div id="head-icons">
+          <form class="d-flex">
+            <a class="nav-icons" href="./login.html">
+              <button class="btn btn-primary" type="button">Login</button>
+            </a>
+            <a class="nav-icons" href="./register.html">
+              <button class="btn btn-primary" type="button">Sign up</button>
+            </a>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <h1 class="d-flex justify-content-center">Sign up</h1>
+      <p class="d-flex justify-content-center">
+        Sign up and enjoy amazing products at very affordable prices
+      </p>
+
+      <div class="col-md-10 mx-auto col-lg-5">
+        <form
+          action="https://api.noroff.dev/api/v1/social/posts"
+          id="registrationForm"
+        >
+          <div class="mb-4 col-md-9 mx-auto text-start">
+            <label for="name" class="form-label content-font">name</label>
+            <input
+              type="name"
+              class="form-control"
+              id="name"
+              name="name"
+              required
+              placeholder="Joel"
+            />
+          </div>
+          <div class="mb-4 col-md-9 mx-auto text-start">
+            <label for="email" class="form-label content-font">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              required
+              placeholder="example@example.com"
+            />
+            <div class="invalid-feedback content-font">
+              Please enter a valid email.
+            </div>
+            <div
+              id="emailError"
+              class="alert alert-danger"
+              style="display: none"
+            >
+              Please enter a valid Noroff email.
+            </div>
+          </div>
+          <div class="mb-4 col-md-9 mx-auto text-start">
+            <label for="password" class="form-label content-font"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              minlength="8"
+              required
+              placeholder="********"
+            />
+            <div class="invalid-feedback content-font">
+              Password must be at least 8 characters long.
+            </div>
+          </div>
+          <div class="mb-4 col-md-9 mx-auto text-start">
+            <label for="confirmPassword" class="form-label content-font"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="Password"
+              name="confirmPassword"
+              required
+              placeholder="********"
+            />
+            <div class="invalid-feedback content-font">
+              Please confirm your password.
+            </div>
+          </div>
+          <div class="d-grid mx-auto col-md-5">
+            <button type="submit" class="btn btn-primary content-font">
+              Sign Up
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
