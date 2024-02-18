@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile page/SNAPBID</title>
+    <link rel="stylesheet" href="../dist/css/index.css" />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="..//index.html">
+          <img
+            src="../assets/170690459_padded_logo.png"
+            alt="site logo"
+            style="width: 250px"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarcollapse"
+          aria-controls="navbarcollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarcollapse">
+          <ul class="navbar-nav ml-auto">
+            <div id="hamburger-items">
+              <li class="navbar-item">
+                <a
+                  href="../index.html"
+                  class="nav-link active text-black"
+                  aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a href="../listings.html" class="nav-link text-black"
+                  >All Listings</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a href="#Latest Listings" class="nav-link text-black"
+                  >Latest Listings</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a href="#Popular Listings" class="nav-link text-black"
+                  >Popular Listings</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a href="#soon to finish Listings" class="nav-link text-black"
+                  >soon to finish Listings</a
+                >
+              </li>
+              <hr />
+              <!-- Horizontal line -->
+              <li class="navbar-item">
+                <a href="#soon to finish Listings" class="nav-link text-black"
+                  >Edith Profile</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a href="#soon to finish Listings" class="nav-link text-black"
+                  >Add new listing</a
+                >
+              </li>
+              <hr />
+              <!-- Horizontal line -->
+              <li class="navbar-item">
+                <a href="#soon to finish Listings" class="nav-link text-black"
+                  >Log out</a
+                >
+              </li>
+            </div>
+          </ul>
+        </div>
+        <div id="head-icons">
+          <form class="d-flex">
+            <a class="nav-icons" href="./profile/index.html">
+              <img src="../assets/Group 60.jpg" alt="Add listing icon" />
+            </a>
+            <a class="nav-icons" href="./profile/index.html">
+              <img src="../assets/Group 18.jpg" alt="credit icon" />
+            </a>
+            <a class="nav-icons" href="./profile/index.html">
+              <img src="../assets/Group 19.jpg" alt="profile icon" />
+            </a>
+            <a class="nav-icons" href="./index.html">
+              <button class="btn btn-primary" type="button">Log out</button>
+            </a>
+          </form>
+
+          <form class="d-flex">
+            <a class="nav-icons" href="./listings.html">
+              <img src="../assets/All items category.jpg" alt="All listings" />
+            </a>
+            <a class="nav-icons" href="#Popular Listings">
+              <img src="../assets/Popular items category.jpg" alt="" />
+            </a>
+            <a class="nav-icons" href="#soon to finish Listings">
+              <img src="../assets/Finish soon category.jpg" alt="" />
+            </a>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <h1>My Profile</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="col-sm-3">
+            <img
+              src="../assets/avatar pp.jpg"
+              class="rounded-circle"
+              alt="profile avatar"
+              style="width: 190px"
+            />
+          </div>
+          <div>
+            <p>Eldorado</p>
+          </div>
+          <div>
+            <p>Credit:2500</p>
+          </div>
+          <div>
+            <button
+              type="button"
+              class="btn btn-primary mt-3 mb-5 content-font"
+            >
+              Add new listing
+            </button>
+          </div>
+          <div>
+            <button
+              type="button"
+              class="btn btn-primary mt-3 mb-5 content-font"
+            >
+              Edit Profile
+            </button>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div>
+            <h3>My Listings</h3>
+          </div>
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="../assets/car 1.jpg"
+                  alt="car for auction"
+                  class="card-img-top img-fluid"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Nice Family Car</h5>
+                  <p>Bid price: 5000$</p>
+                  <p>Expires in: 2d 5h</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="../assets/neck massager.jpg"
+                  alt="car for auction"
+                  class="card-img-top img-fluid"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Neck Massager</h5>
+                  <p>Bid price: 300$</p>
+                  <p>Expires in: 1d 6h</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="../assets/dinning table.jpg"
+                  alt="car for auction"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">White dinning chairs</h5>
+                  <p>Bid price: 400$</p>
+                  <p>Expires in: 4d 2h</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3>My Bids</h3>
+          </div>
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="../assets/TV bench.jpg"
+                  alt="TV bench for auction"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">TV bench</h5>
+                  <p>Bid price: 60$</p>
+                  <p>Expires in: 4d 2h</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="../assets/vegetable machine.jpg"
+                  alt="vegetable cutter for auction"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Vegetable cutting machine</h5>
+                  <p>Bid price: 50$</p>
+                  <p>Expires in: 5d 1h</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="../assets/samsung S23 Ultra.jpg"
+                  alt="samsung galaxy ultra for auction"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">samsung S23 Ultra</h5>
+                  <p>Bid price: 600$</p>
+                  <p>Expires in: 3d 6h</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
