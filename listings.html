@@ -30,46 +30,50 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarcollapse">
           <ul class="navbar-nav ml-auto">
-            <li class="navbar-item">
-              <a
-                href="./profile/login.html"
-                class="nav-link active text-black"
-                aria-current="page"
-                >Login</a
-              >
-            </li>
-            <li class="navbar-item">
-              <a href="./profile/register.html" class="nav-link text-black"
-                >Sign Up</a
-              >
-            </li>
-            <li class="navbar-item">
-              <a href="./listings.html" class="nav-link text-black"
-                >All Listings</a
-              >
-            </li>
+            <div id="hamburger-items">
+              <li class="navbar-item">
+                <a
+                  href="./profile/login.html"
+                  class="nav-link active text-black"
+                  aria-current="page"
+                  >Login</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a href="./profile/register.html" class="nav-link text-black"
+                  >Sign Up</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a href="./listings.html" class="nav-link text-black"
+                  >All Listings</a
+                >
+              </li>
+            </div>
           </ul>
         </div>
-        <form class="d-flex mx-3">
-          <a href="./profile/login.html">
-            <button class="btn btn-primary" type="button">Login</button>
-          </a>
-          <a href="./profile/register.html">
-            <button class="btn btn-primary" type="button">Sign up</button>
-          </a>
-        </form>
+        <div id="head-icons">
+          <form class="d-flex">
+            <a class="nav-icons" href="./profile/login.html">
+              <button class="btn btn-primary" type="button">Login</button>
+            </a>
+            <a class="nav-icons" href="./profile/register.html">
+              <button class="btn btn-primary" type="button">Sign up</button>
+            </a>
+          </form>
 
-        <form class="d-flex mx-auto">
-          <a href="./listings.html">
-            <img src="assets/All items category.jpg" alt="All listings" />
-          </a>
-          <a href="#Popular Listings">
-            <img src="assets/Popular items category.jpg" alt="" />
-          </a>
-          <a href="#soon to finish Listings">
-            <img src="assets/Finish soon category.jpg" alt="" />
-          </a>
-        </form>
+          <form class="d-flex">
+            <a class="nav-icons" href="./listings.html">
+              <img src="assets/All items category.jpg" alt="All listings" />
+            </a>
+            <a class="nav-icons" href="index.html#Popular Listings">
+              <img src="assets/Popular items category.jpg" alt="" />
+            </a>
+            <a class="nav-icons" href="index.html#soon to finish Listings">
+              <img src="assets/Finish soon category.jpg" alt="" />
+            </a>
+          </form>
+        </div>
       </nav>
     </header>
     <main>
@@ -88,186 +92,207 @@
         <h2 class="d-flex justify-content-center">All Listings</h2>
         <div class="row row-cols-1 row-cols-md-3 g-4">
           <div class="col">
-            <div class="card h-100">
-              <img
-                src="./assets/car 1.jpg"
-                alt="car for auction"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Nice Family Car</h5>
-                <p>Bid price: 5000$</p>
-                <p>Expires in: 2d 5h</p>
+            <a href="./single-listing.html">
+              <div class="card h-100">
+                <img
+                  src="./assets/car 1.jpg"
+                  alt="car for auction"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Nice Family Car</h5>
+                  <p>Bid price: 5000$</p>
+                  <p>Expires in: 2d 5h</p>
+                </div>
               </div>
-              <a href="./single-listing.html" class="btn btn-primary"
-                >view item</a
-              >
-            </div>
+            </a>
           </div>
 
           <div class="col">
-            <div class="card h-100">
-              <img
-                src="./assets/Frame 3.jpg"
-                alt="car for auction"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Super comfory dinning table</h5>
-                <p>Bid price: 700$</p>
-                <p>Expires in: 3d 8h</p>
+            <a href="./single-listing.html">
+              <div class="card h-100">
+                <img
+                  src="./assets/Frame 3.jpg"
+                  alt="car for auction"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Super comfory dinning table</h5>
+                  <p>Bid price: 700$</p>
+                  <p>Expires in: 3d 8h</p>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
           <div class="col">
-            <div class="card h-100">
-              <img
-                src="./assets/neck massager.jpg"
-                alt="car for auction"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Neck Massager</h5>
-                <p>Bid price: 300$</p>
-                <p>Expires in: 1d 6h</p>
+            <a href="./single-listing.html">
+              <div class="card h-100">
+                <img
+                  src="./assets/neck massager.jpg"
+                  alt="car for auction"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Neck Massager</h5>
+                  <p>Bid price: 300$</p>
+                  <p>Expires in: 1d 6h</p>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
           <div class="col">
-            <div class="card h-100">
-              <img
-                src="./assets/dinning table.jpg"
-                alt="car for auction"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <h5 class="card-title">White dinning chairs</h5>
-                <p>Bid price: 400$</p>
-                <p>Expires in: 4d 2h</p>
+            <a href="./single-listing.html">
+              <div class="card h-100">
+                <img
+                  src="./assets/dinning table.jpg"
+                  alt="car for auction"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">White dinning chairs</h5>
+                  <p>Bid price: 400$</p>
+                  <p>Expires in: 4d 2h</p>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
           <div class="col">
-            <div class="card h-100">
-              <img
-                src="./assets/gaming chair.jpg"
-                alt="gaming chair for auction"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Gamming chair</h5>
-                <p>Bid price: 60$</p>
-                <p>Expires in: 3d 1h</p>
+            <a href="./single-listing.html">
+              <div class="card h-100">
+                <img
+                  src="./assets/gaming chair.jpg"
+                  alt="gaming chair for auction"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Gamming chair</h5>
+                  <p>Bid price: 60$</p>
+                  <p>Expires in: 3d 1h</p>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
           <div class="col">
-            <div class="card h-100">
-              <img
-                src="./assets/Office desk.jpg"
-                alt="office desk for auction"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Office desk</h5>
-                <p>Bid price: 100$</p>
-                <p>Expires in: 4d 8h</p>
+            <a href="./single-listing.html">
+              <div class="card h-100">
+                <img
+                  src="./assets/Office desk.jpg"
+                  alt="office desk for auction"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Office desk</h5>
+                  <p>Bid price: 100$</p>
+                  <p>Expires in: 4d 8h</p>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
           <div class="col">
-            <div class="card h-100">
-              <img
-                src="./assets/samsung galaxy watch.jpg"
-                alt="samsung galaxy watch for auction"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Samsung galaxy watch</h5>
-                <p>Bid price: 250$</p>
-                <p>Expires in: 2d 6h</p>
+            <a href="./single-listing.html">
+              <div class="card h-100">
+                <img
+                  src="./assets/samsung galaxy watch.jpg"
+                  alt="samsung galaxy watch for auction"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Samsung galaxy watch</h5>
+                  <p>Bid price: 250$</p>
+                  <p>Expires in: 2d 6h</p>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
           <div class="col">
-            <div class="card h-100">
-              <img
-                src="./assets/Frame 9.jpg"
-                alt="dinning chairs for auction"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Yellow dinning chairs</h5>
-                <p>Bid price: 200$</p>
-                <p>Expires in: 5d 1h</p>
+            <a href="./single-listing.html">
+              <div class="card h-100">
+                <img
+                  src="./assets/Frame 9.jpg"
+                  alt="dinning chairs for auction"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Yellow dinning chairs</h5>
+                  <p>Bid price: 200$</p>
+                  <p>Expires in: 5d 1h</p>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
           <div class="col">
-            <div class="card h-100">
-              <img
-                src="./assets/ski shoes.jpg"
-                alt="ski shoes for auction"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Ski Shoes</h5>
-                <p>Bid price: 30$</p>
-                <p>Expires in: 3d 5h</p>
+            <a href="./single-listing.html">
+              <div class="card h-100">
+                <img
+                  src="./assets/ski shoes.jpg"
+                  alt="ski shoes for auction"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Ski Shoes</h5>
+                  <p>Bid price: 30$</p>
+                  <p>Expires in: 3d 5h</p>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
           <div class="col">
-            <div class="card h-100">
-              <img
-                src="./assets/TV bench.jpg"
-                alt="TV bench for auction"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <h5 class="card-title">TV bench</h5>
-                <p>Bid price: 60$</p>
-                <p>Expires in: 4d 2h</p>
+            <a href="./single-listing.html">
+              <div class="card h-100">
+                <img
+                  src="./assets/TV bench.jpg"
+                  alt="TV bench for auction"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">TV bench</h5>
+                  <p>Bid price: 60$</p>
+                  <p>Expires in: 4d 2h</p>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
           <div class="col">
-            <div class="card h-100">
-              <img
-                src="./assets/vegetable machine.jpg"
-                alt="vegetable cutter for auction"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Vegetable cutting machine</h5>
-                <p>Bid price: 50$</p>
-                <p>Expires in: 5d 1h</p>
+            <a href="./single-listing.html">
+              <div class="card h-100">
+                <img
+                  src="./assets/vegetable machine.jpg"
+                  alt="vegetable cutter for auction"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Vegetable cutting machine</h5>
+                  <p>Bid price: 50$</p>
+                  <p>Expires in: 5d 1h</p>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
           <div class="col">
-            <div class="card h-100">
-              <img
-                src="./assets/samsung S23 Ultra.jpg"
-                alt="samsung galaxy ultra for auction"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <h5 class="card-title">samsung S23 Ultra</h5>
-                <p>Bid price: 600$</p>
-                <p>Expires in: 3d 6h</p>
+            <a href="./single-listing.html">
+              <div class="card h-100">
+                <img
+                  src="./assets/samsung S23 Ultra.jpg"
+                  alt="samsung galaxy ultra for auction"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">samsung S23 Ultra</h5>
+                  <p>Bid price: 600$</p>
+                  <p>Expires in: 3d 6h</p>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
