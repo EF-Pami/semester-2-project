@@ -12402,4 +12402,18 @@ body {
   margin-left: 20px;
 }
 
+@media only screen and (max-width: 456px) {
+  #head-icons {
+    display: none;
+  }
+}
+@media (min-width: 900px) {
+  #hamburger-items {
+    display: none;
+  }
+  .nav-icons:not(:last-child) {
+    margin-right: 40px;
+  }
+}
+
 /*# sourceMappingURL=index.css.map */
