@@ -1,0 +1,5 @@
+// All storage from Noroff storage
+
+export * from "./load.mjs";
+export * from "./remove.mjs";
+export * from "./save.mjs";
