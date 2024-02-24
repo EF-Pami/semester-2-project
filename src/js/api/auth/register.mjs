@@ -1,64 +1,67 @@
-import { API_BASE_URL } from "../../constants.mjs";
+import { API_BASE_URL, API_REGISTER_URL, loginForm} from "../../constants.mjs";
+import { validateEmail} from "../../components/validateEmail.mjs";
+import { validAvatar} from "../../components/validAvatar.mjs";
+import { successMessage } from "../../components/success.mjs";
+import { errorMessage } from "../../components/error.mjs";
+import { timeout } from "../../components/timeout.mjs";
 
-export async function registerUser(profile) {
-    const action = '/auth/register';
-    const method = 'POST';
+export async function register(evt) {
+    evt.preventDefault();
+    //getting error container
+    const errorContainer = evt.target.querySelector(".invalid-feedback content-font");
 
-    try {
-        const regitserURL = API_BASE_URL + action;
-        const body = JSON.stringify(profile);
+    // assigning inputs to the form variables
+    const [userName, email, password, avatar] = evt.target.element;
+    
+    let validatedEmail = "";
 
-        const response = await fetch (regitserURL, {
-            headers: {
-                'content-Type': 'application/json'
-            },
-            method,
-            body,
+    if (!validateEmail(email.value)) {
+        errorContainer.innerHTML = errorMessage("Please enter a valid email");
+    } else {
+        errorContainer.innerHTML = "";
+        validatedEmail = email.value;
+
+        //validate the user avatar
+        const userAvatar = validAvatar(avatar.value);
+
+        //data to be sent to the API
+        const dataobj = JSON.stringify({
+            name: userName.value,
+            email: validatedEmail,
+            password: password.value,
+            avatar: userAvatar,
         });
 
-        if (response.ok) {
-            window.location.href = '/profile/login/index.html';
-        } else {
-            throw new Error('Registration failed')
-        }
+        try {
+            const response = await fetch(`${API_BASE_URL}${API_REGISTER_URL}`, {
+                method: "POST",
+                body: dataobj,
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8",
+                },
+            });
 
-        const result = await response.json();
-        return result;
-    } catch (error) {
-        throw new Error('Registration error:' + error.message)
+            const json = await response.json();
+
+            if (json.errors) {
+                let message;
+                if (json.errors[0].message) {
+                    message = json.errors[0].message
+                }
+                if (json.errors[0].code) {
+                    message = json.errors[0].code;
+                }
+                errorContainer.innerHTML = errorMessage(`Error ${json.statusCode}, ${json.status}: ${message}`);
+            } else {
+                errorContainer.innerHTML = successMessage("Registration successful");
+                await timeout(1200);
+
+                loginForm.querySelector("input[type=email]").value = validatedEmail;
+                loginForm.querySelector("input[type=password]").value = password.value;
+            }
+        } catch (error) {
+            console.log(error);
+            errorContainer.innerHTML = errorMessage("Something went wrong.." + error);
+        }
     }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-    const registrationForm = document.getElementById('registrationForm');
-    const emailInput = document.getElementById('email');
-    const emailError = document.getElementById('emailError');
-
-    registrationForm.addEventListener('submit', async function (event) {
-        event.preventDefault();
-    
-        const nameInput = document.getElementById('name');
-        const passwordInput = document.getElementById('password');
-    
-        const user = {
-          name: nameInput.value,
-          email: emailInput.value,
-          password: passwordInput.value,
-        };
-
-        const isValidNoroffEmail = isValidEmail(user.email);
-
-        if (!isValidNoroffEmail) {
-            emailError.style.display = 'block';
-            return; 
-        }
-        emailError.style.display = 'none';
-
-        await registerUser(`${API_BASE_URL}/auth/register`, user)
-});
-
-function isValidEmail(email) {
-    const noroffEmailRegex = /^(.+)@(noroff\.no|stud\.noroff\.no)$/;
-    return noroffEmailRegex.test(email);
-  }
-});
