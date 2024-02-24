@@ -24,3 +24,7 @@ export const userInfo = storage.load("user");
 //API Parameters
 export const profileparams = "?_listings=true";
 export const listingsparams = "?_seller=true&_bids=true&_active=true&sort=created&Order=desc";
+
+
+//page elements
+export const errorContainer = document.querySelector(".invalid-feedback content-font");
