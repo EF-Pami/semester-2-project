@@ -1,7 +1,7 @@
 import { isUserLoggedIn } from "./api/auth/isUserLoggedIn.mjs";
 
 //API URLs
-export const API_BASE_URL = "https://v2.api.noroff.dev";
+export const API_BASE_URL = "https://v1.api.noroff.dev";
 export const API_REGISTER_URL = "/auth/register";
 export const API_LOGIN_URL = "/auth/login";
 export const ALL_LISTINGS = "/auction/listings";
