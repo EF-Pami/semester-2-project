@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand" href="../index.html">
+          <img
+            src="../assets/170690459_padded_logo.png"
+            alt="site logo"
+            style="width: 250px"
+          />
+        </a>
+        <div id="head-icons">
+          <form class="d-flex">
+            <a class="nav-icons" href="./login.html">
+              <button class="btn btn-primary" type="button">Login</button>
+            </a>
+            <a class="nav-icons" href="./register.html">
+              <button class="btn btn-primary" type="button">Sign up</button>
+            </a>
+          </form>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="listing-container">
+        <h1>Create Listing</h1>
+        <form>
+          <div class="form-group">
+            <label for="List-title">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              placeholder="Enter title"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+              class="form-control"
+              id="description"
+              rows="10"
+              cols="30"
+              placeholder="Enter description"
+            ></textarea>
+          </div>
+          <div class="col-md-4 mx-auto">
+            <label for="postTag" class="content-font text-white">Tags</label>
+            <input type="text" name="tags" class="form-control" />
+          </div>
+
+          <div class="col-md-4 mx-auto">
+            <label for="postMedia" class="content-font text-white">Media</label>
+            <input type="url" name="password" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="price">Starting Bid Price</label>
+            <input
+              type="number"
+              class="form-control"
+              id="price"
+              placeholder="Enter starting bid price"
+            />
+          </div>
+          <div class="form-group">
+            <label for="start-date">Start Date</label>
+            <input
+              type="date"
+              class="form-control"
+              id="start-date"
+              placeholder="Enter start date"
+            />
+          </div>
+          <div class="form-group">
+            <label for="end-date">End Date</label>
+            <input
+              type="date"
+              class="form-control"
+              id="end-date"
+              placeholder="Enter end date"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
