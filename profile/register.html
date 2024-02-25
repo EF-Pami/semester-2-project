@@ -6,7 +6,7 @@
     <title>Register page/SNAPBID</title>
     <link rel="stylesheet" href="../dist/css/index.css" />
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script defer src="../src/js/index.mjs" type="module" defer></script>
+    <script src="../src/js/index.mjs" type="module" defer></script>
   </head>
   <body>
     <header>
@@ -39,10 +39,7 @@
       </p>
 
       <div class="col-md-10 mx-auto col-lg-5">
-        <form
-          action="https://v2.api.noroff.dev/auth/register"
-          id="registrationForm"
-        >
+        <form id="registrationForm">
           <div class="mb-4 col-md-9 mx-auto text-start">
             <label for="name" class="form-label content-font">name</label>
             <input
@@ -62,7 +59,7 @@
               id="email"
               name="email"
               required
-              format="[\w\-.]+@stud.noroff.no$"
+              pattern="/^(.+)@(noroff\.no|stud\.noroff\.no)$/"
               placeholder="example@example.com"
             />
             <div class="invalid-feedback content-font">

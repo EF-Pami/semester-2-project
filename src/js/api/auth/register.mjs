@@ -55,6 +55,7 @@ export async function register(evt) {
             } else {
                 errorContainer.innerHTML = successMessage("Registration successful");
                 await timeout(1200);
+                window.location.href = '/profile/login.html';
 
                 loginForm.querySelector("input[type=email]").value = validatedEmail;
                 loginForm.querySelector("input[type=password]").value = password.value;

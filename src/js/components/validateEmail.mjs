@@ -10,6 +10,6 @@
 
 export function validateEmail(email) {
   const noroffEmailRegex = /^(.+)@(noroff\.no|stud\.noroff\.no)$/;
-  const formatMatches = noroffEmailRegex.test(email);
-  return formatMatches;
+  const patternMatches = noroffEmailRegex.test(email);
+  return patternMatches;
 }
