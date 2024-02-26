@@ -59,9 +59,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         await registerUser(`${API_BASE_URL}/auth/register`, user)
 });
+});
 
-function isValidEmail(email) {
-    const noroffEmailRegex = /^(.+)@(noroff\.no|stud\.noroff\.no)$/;
+/*function isValidEmail(email) {
+    const noroffEmailRegex = /^(.+)@(stud\.noroff\.no)$/;
     return noroffEmailRegex.test(email);
   }
-});
+});*/
