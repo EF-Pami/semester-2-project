@@ -6,7 +6,6 @@
     <title>Register page/SNAPBID</title>
     <link rel="stylesheet" href="../dist/css/index.css" />
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../src/js/index.mjs" type="module" defer></script>
   </head>
   <body>
     <header>
@@ -59,7 +58,7 @@
               id="email"
               name="email"
               required
-              pattern="/^(.+)@(noroff\.no|stud\.noroff\.no)$/"
+              pattern="/[\w\-\.]+@(stud\.?noroff)\.no/"
               placeholder="example@example.com"
             />
             <div class="invalid-feedback content-font">
@@ -114,6 +113,6 @@
         </form>
       </div>
     </main>
-    <script type="module" src="../src/js/api/auth/register.mjs"></script>
+    <script type="module" src="../src/js/api/auth/trysignup.mjs"></script>
   </body>
 </html>
