@@ -58,7 +58,7 @@
               id="email"
               name="email"
               required
-              pattern="[\w-.]+@stud.noroff.no$"
+              pattern="[\w\-.]+@stud.noroff.no$"
               placeholder="example@example.com"
             />
             <div class="invalid-feedback content-font">
@@ -96,7 +96,7 @@
             <input
               type="text"
               class="form-control"
-              id="Avatar"
+              id="avatar"
               name="Avatar"
               required
               placeholder="Avatar URL"
@@ -106,7 +106,11 @@
             </div>
           </div>
           <div class="d-grid mx-auto col-md-5">
-            <button type="submit" class="btn btn-primary content-font">
+            <button
+              type="submit"
+              class="btn btn-primary content-font"
+              id="signup"
+            >
               Sign Up
             </button>
           </div>
