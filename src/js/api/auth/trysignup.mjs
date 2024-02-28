@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     
             if (response.ok) {
-            // Sign up successful, redirect to dashboard or show success message
+            // Sign up successful, redirect to login page
             window.location.href = '/Profile/login.html';
             } else {
             // Show error message from server response
