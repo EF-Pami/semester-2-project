@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const name = nameInput.value.trim();
         const email = emailInput.value.trim();
         const password = passwordInput.value.trim();
-        const avatar = avatarInput.files[0];
+        const avatar = avatarInput.value.trim(0);
     
         if (name === '') {
         showError('Name is required');
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const name = nameInput.value.trim();
         const email = emailInput.value.trim();
         const password = passwordInput.value.trim();
-        const avatar = avatarInput.files[0];
+        const avatar = avatarInput.value.trim(0);
     
         try {
             //Create a new FormData object
@@ -161,8 +161,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const nameInput = document.getElementById('name');
         const passwordInput = document.getElementById('password');
 
-        //validate the user avatar
-        //const userAvatar = validAvatar(avatar.value);
+        //const avatarurlInput = document.getElementById('avatar')
+        //const userAvatar = avatarurlInput.value.trim();
     
         const user = {
           name: nameInput.value,
