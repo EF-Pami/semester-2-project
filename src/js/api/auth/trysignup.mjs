@@ -1,6 +1,8 @@
 import { API_BASE_URL } from "../../constants.mjs";
 import { API_REGISTER_URL } from "../../constants.mjs";
 
+
+
 // loading DOM first 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -121,12 +123,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-/*import { validAvatar} from "../../components/validAvatar.mjs";
+//import { validAvatar} from "../../components/validAvatar.mjs";
 
 
-
-
-async function registerUser(API_BASE_URL, data) {
+/*async function registerUser(`${API_BASE_URL}${API_REGISTER_URL}`, data) {
     try {
         const postData = {
             method: 'POST',
@@ -140,7 +140,7 @@ async function registerUser(API_BASE_URL, data) {
         const json = await response.json();
 
         if (response.ok) {
-            window.location.href = '/Profile/login/index.html';
+            window.location.href = '/Profile/login.html';
         } else {
         }
         return json;
@@ -160,15 +160,15 @@ document.addEventListener('DOMContentLoaded', function () {
     
         const nameInput = document.getElementById('name');
         const passwordInput = document.getElementById('password');
-
-        //const avatarurlInput = document.getElementById('avatar')
+        const avatarInput = document.getElementById('avatar');
+        
         //const userAvatar = avatarurlInput.value.trim();
     
         const user = {
           name: nameInput.value,
           email: emailInput.value,
           password: passwordInput.value,
-          //avatar: userAvatar,
+          avatar: userAvatarInput.value,
         };
 
         const isValidNoroffEmail = isValidEmail(user.email);
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         emailError.style.display = 'none';
 
-        await registerUser(`${API_BASE_URL}/auth/register`, user)
+        await registerUser(`${API_BASE_URL}${API_REGISTER_URL}`, user)
 });
 
 
@@ -188,3 +188,4 @@ function isValidEmail(email) {
     return noroffEmailRegex.test(email);
   }
 });*/
+
