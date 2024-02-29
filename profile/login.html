@@ -6,6 +6,7 @@
     <title>Login page/SNAPBID</title>
     <link rel="stylesheet" href="../dist/css/index.css" />
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script defer src="../src/js/index.mjs" type="module" defer></script>
   </head>
   <body>
     <header>
@@ -35,11 +36,7 @@
       <h1 class="d-flex justify-content-center">Login</h1>
 
       <div class="col-md-10 mx-auto col-lg-5">
-        <form
-          action="https://api.noroff.dev/api/v1/social/posts"
-          class="p-4 p-md-5"
-          id="loginForm"
-        >
+        <form class="p-4 p-md-5" id="loginForm">
           <div class="mb-4 col-md-9 mx-auto text-start">
             <label for="name" class="form-label content-font mt-4">Name</label>
             <input
