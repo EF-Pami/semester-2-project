@@ -7,10 +7,11 @@ export const API_REGISTER_URL = "/auth/register";
 export const API_LOGIN_URL = "/auth/login";
 export const ALL_LISTINGS = "/auction/listings";
 export const SINGLE_LISTING = "/auction/listings/<id>";
-export const BID_ON_LISTING = "/auction/listings/<id>/bids";
+export const BID_ON_LISTING = "/bids";
 export const ALL_PROFILES = "/auction/profiles";
 export const SINGLE_PROFILE = "/auction/profiles/<name>";
 export const ALL_LISTINGS_BY_PROFILES = "/auction/profiles/<name>/listings";
+export const SEARCH_LISTINGS = "/auction/listings/search";
 
 
 //Forms
