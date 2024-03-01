@@ -1,10 +1,10 @@
-import * as storage from "../../storage/index.mjs";
+//import * as storage from "../../storage/index.mjs";
 
 /**
  * function checks if user is logged in or not and redirects the user to the login page
  */
 
-export function isUserLoggedIn() {
+/*export function isUserLoggedIn() {
     const checkAuth = storage.load("jwt");
 
     if (checkAuth && checkAuth.length > 0) {
@@ -12,4 +12,35 @@ export function isUserLoggedIn() {
     } else {
         return false;
     }
+}*/
+
+function updateLoginbtn() {
+    const loginbtn = document.getElementById("loginbtn");
+    const accessToken = localStorage.getItem("accessToken");
+
+    try {
+        if (loginbtn) {
+            if (accessToken) {
+                console.log('Userlogged in:', accessToken);
+                loginbtn.textContent = 'Log out';
+                loginbtn.href = '#';
+                loginbtn.addEventListener('click', () => {
+                    localStorage.removeItem('IsloggedIn');
+                    localStorage.removeItem('username');
+                    localStorage.removeItem('accessToken');
+                    localStorage.removeItem('avatar');
+                    localStorage.removeItem('banner');
+                    window.location.href = "/index.html";
+                });
+            } else {
+                console.log('Not logged in');
+                loginbtn.textContent = 'Login';
+            }
+        }
+    } catch (error) {
+        console.log('Error updating login button:', error.message);
+    }
 }
+
+export { updateLoginbtn};
+    

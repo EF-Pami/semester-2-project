@@ -1,4 +1,4 @@
-import { isUserLoggedIn } from "./api/auth/isUserLoggedIn.mjs";
+//import { isUserLoggedIn } from "./api/auth/isUserLoggedIn.mjs";
 import * as storage from "../js/storage/index.mjs";
 
 //API URLs
@@ -18,7 +18,7 @@ export const loginForm = document.querySelector("#loginForm");
 export const registrationForm = document.querySelector("#registrationForm");
 
 //isUserLoggedIn
-export const loggedIn = isUserLoggedIn();
+//export const loggedIn = isUserLoggedIn();
 
 //userInfo
 export const userInfo = storage.load("user");
