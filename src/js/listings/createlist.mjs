@@ -36,18 +36,14 @@ export async function newlisting (Listtitle, Listcontent, accessToken) {
 export async function createListing() {
     const TitleInput = document.getElementById("listingTitle");
     const descriptionInput = document.getElementById("listingDescription");
-    const tagInput = document.getElementById("listingTag");
-    const mediaInput = document.getElementById("listingMediaUrl");
-    const bidPriceInput = document.getElementById("listingBidprice");
-    const startdateInput = document.getElementById("start-date");
-    const enddateInput = document.getElementById("end-date");
+    const tagInput = document.getElementById("listingTags");
+    const mediaInput = document.getElementById("listingMediaUrls");
+    const enddateInput = document.getElementById("listingEndsAt");
 
     const title = TitleInput.Value;
     const description = descriptionInput.Value;
     const tags = tagInput.Value.split(",").map((tag) => tag.trim());
     const mediaurl = mediaInput.Value.split('\n').map(url => ({ url: url.trim(), alt: "Auction item image"}));
-    const bidprice = bidPriceInput.Value;
-    const startdate = startdateInput.Value;
     const enddate = enddateInput.value;
 
     const listingData = {
@@ -55,14 +51,12 @@ export async function createListing() {
         description: description,
         tags: tags,
         media: mediaurl,
-        bidprice: bidprice,
-        startdate: startdate,
         enddate: enddate,
     };
 
     const accessToken = localStorage.getItem("accessToken");
-    const BASE_URL = "https://api.noroff.dev";
-    const LISTING_URL = "/api/v1/auction/listings";
+    const BASE_URL = "https://v2.noroff.dev";
+    const LISTING_URL = "/auction/listings";
 
     fetch(BASE_URL + LISTING_URL, {
         method: 'POST',
@@ -86,8 +80,6 @@ export async function createListing() {
             descriptionInput.value = "";
             tagInput.value = "";
             mediaInput.value = "";
-            bidPriceInput.value = "";
-            startdateInput.value = "";
             enddateInput.value = "";
             location.reload();
         })
