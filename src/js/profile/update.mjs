@@ -1,54 +1,66 @@
-import { API_BASE_URL, ALL_PROFILES, userInfo } from "../constants.mjs";
-import { successMessage } from "../components/success.mjs";
-import { errorMessage } from "../components/error.mjs";
-import { timeout } from "../components/timeout.mjs";
-import * as storage from "../storage/index.mjs";
+import { API_BASE_URL, ALL_PROFILES } from "../constants.mjs";
 
-/**
- * function update the users profile
- * @param {Element} evt form to get image from
- */
+export async function EditAvatar() {
+    document.addEventListener("DOMContentLoaded", function () {
+        document
+            .getElementById("editForm")
+            .addEventListener("submit", function (evt) {
+                evt.preventDefault();
 
-export async function updateProfile(evt) {
-    evt.preventDefault();
+                const userData = {
+                    avatar: {
+                        url: document.getElementById("UpdateAvatar").value,
+                        alt: "user avatar",
+                    },
+                };
 
-    //error container
-    const errorContainer = evt.target.queryselector(".invalid-feedback content-font");
+                const name = localStorage.getItem("userName");
+                const accessToken = localStorage.getItem("accessToken");
 
-    //getting form elements
-    const [img] = evt.target.element;
+                fetch(API_BASE_URL + ALL_PROFILES + "/" + name, {
+                    method: "PUT",
+                    body: JSON.stringify(userData),
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${accessToken}`,
+                    },
+                })
+                 .then((response) => {
+                    if (response.status === 200) {
+                        return response.json();
+                    } else {
+                        return response
+                            .json()
+                            .then((data) =>
+                                Promise.reject({ data, status: response.status}),
+                            );
+                    }
+                 })
+                 .then((data) => {
+                    const storedProfile = localStorage.getItem("profile");
+                    const profileData = storedProfile
+                        ? JSON.parse(storedProfile)
+                        : null;
 
-    //constructing data to sent to the API
-    let dataobject = {
-        avatar: `${img.value}`,
-    };
-    try {
-        const response = await fetch(`${API_BASE_URL}${ALL_PROFILES}/${userInfo.name}/media`, {
-            method: "PUT",
-            body: JSON.stringify(dataobject),
-            headers: {
-                Authorization: `Bearer ${jwt}`,
-                "Content-Type": "application/json; charset=utf-8",
-            },
-        });
+                    if (profileData) {
+                        profileData.data.avatar.url = userData.avatar.url;
+                        localStorage.setItem("profile", JSON.stringify(profileData));
+                    }
 
-        const json = await response.json();
-
-        if (json.errors) {
-            let message;
-            if (json.errors[0].message) {
-                message = json.errors[0].message;
-            } else {
-                message = json.errors[0].code;
-            }
-            errorContainer.innerHTML = errorMessage(`Error ${json.statusCode}, ${json.status}: ${message}`);
-        } else {
-            errorContainer.innerHTML = successMessage("Profile avatar updated");
-            await timeout(1200);
-            location.reload();
-        }
-    } catch (error) {
-        console.log(error);
-        errorContainer.innerHTML = errorMessage("Something went wrong.." + error);
-    }
+                    alert("Avatar updated successfully");
+                    window.location.href = "../profile/index.html";
+                 })
+                 .catch((error) => {
+                    if (error.status === 400 && error.data && error.data.errors) {
+                        const errorMessage = error.data.errors
+                            .map((error) => error.message)
+                            .join("\n");
+                        alert(`Error updating Avatar :\n${errorMessage}`);
+                    } else {
+                        console.error("Error updating Avatar:", error);
+                        alert(`Error updating Avatar: ${error}.`);
+                    }
+                 });
+            });
+    });
 }
