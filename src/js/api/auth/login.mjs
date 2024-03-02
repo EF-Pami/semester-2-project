@@ -71,16 +71,16 @@ import * as storage from "../../storage/index.mjs";
 }*/
 
 import { API_BASE_URL, API_LOGIN_URL } from "../../constants.mjs";
-import { updateLoginbtn } from "./isUserLoggedIn.mjs";
+//import { updateLoginbtn } from "./isUserLoggedIn.mjs";
 
-updateLoginbtn();
+//updateLoginbtn();
 
-if (localStorage.length > 0) {
-    localStorage.clear();
-    console.log('localstorage cleared successfully');
-} else {
-    console.log('localstorage already cleared');
-}
+//if (localStorage.length > 0) {
+    //localStorage.clear();
+    //console.log('localstorage cleared successfully');
+//} else {
+    //console.log('localstorage already cleared');
+//}
 
 document.addEventListener("DOMContentLoaded", function () {
 

@@ -7,61 +7,63 @@ document.addEventListener("DOMContentLoaded", function () {
     registrationForm.addEventListener("submit", function (evt) {
         evt.preventDefault();
 
-        const Auth_Registration = API_BASE_URL + API_REGISTER_URL;
-
-        const Username = document.getElementById("name");
-        const email = document.getElementById("email");
-        const password = document.getElementById("password");
         const avatarUrlInput = document.getElementById("avatar");
-        
+        const avatarUrl = avatarUrlInput.value.trim();
 
-        const noroffEmailRegex = /[\w\-.]+@stud.noroff.no$/;
-        if (!noroffEmailRegex.test(email.value)) {
-            alert("Registration failed, please enter valid noroff email.");
-            return;
-        }
-        //const avatarUrl = avatar.url;
-        let registrationData = {
-            name: Username.value,
-            email: email.value,
-            password: password.value,
-            avatar: {
-                url: avatarUrlInput.value
-            }
-            
+        const userData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
         };
-        
-        console.log(avatar);
 
-        //if (avatarUrl.value.trim() !=="") {
-            //registrationData.avatar = avatarUrl.value;
-        //}
-        console.log(registrationData);
-        fetch (Auth_Registration, {
-            method: 'POST',
+        if (avatarUrl !== "") {
+            userData.avatar ={
+                url: avatarUrl,
+            };
+        }
+
+        console.log("user Data:", userData);
+
+        fetch(API_BASE_URL + API_REGISTER_URL, {
+            method: "POST",
+            body: JSON.stringify(userData),
             headers: {
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(registrationData),
         })
+            .then((response) => {
+                if (response.status ===201) {
+                    return response.json();
+                } else {
+                    return response
+                        .json()
+                        .then((data) =>
+                            Promise.reject({ data, status: response.status}),
+                        );
+                }
+            })
+            .then((data) => {
+                alert("Registraion successful");
+                console.log("user profile:", data);
+            })
+            .catch(error =>{
+                let errorMessage = "Unexpected error, please try again.";
 
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error("Registration failed");
-            }
-            return response.json();
-        })
+                if (error.body && error.body.errors && error.body.errors.length > 0) {
+                    errorMessage = error.body.errors[0].message;
+                } else if (error.message) {
+                    errorMessage = error.message;
+                }
+                const loginErrorDiv = document.getElementById("registration-error");
+                if (loginErrorDiv) {
+                    loginErrorDiv.textContent = errorMessage;
+                }
+            });
 
-        .then(() =>{
-            Username.value = "";
-            email.value = "";
-            password.value = "";
-            avatar.url.value = "";
-            alert("Registration successful!");
-        })
-        .catch((error) => {
-            alert("Registration failed. Please try again")
-        });
+        
+        
+        
+        
     });
 });
 
