@@ -59,9 +59,13 @@
                 Login
               </button>
             </a>
-            <a class="nav-icons" href="./profile/register.html">
-              <button class="btn btn-primary" type="button">Sign up</button>
-            </a>
+
+            <button
+              class="btn btn-primary btn-auction border-white text-white fw-bold text-stroke d-none"
+              id="logout-btn"
+            >
+              Logout
+            </button>
           </form>
 
           <form class="d-flex">
@@ -79,20 +83,127 @@
       </nav>
     </header>
     <main>
-      <section>
-        <div class="search-bar mt-3 col-6 col-md-4 mx-auto">
-          <input
-            type="text"
-            class="form-control form-control-sm"
-            id="search-for"
-            placeholder="Search"
-          />
+      <div class="container bg-card text-black rounded mb-4 col-10" id="hideID">
+        <h2>
+          <a
+            data-bs-toggle="collapse"
+            href="#createForm"
+            role="button"
+            aria-expanded="false"
+            aria-controls="createForm"
+            class="text-black text-decoration-none fw-bold text-stroke"
+            >Create a Listing +</a
+          >
+        </h2>
+        <div class="collapse" id="createForm">
+          <form id="createListingForm">
+            <div class="mb-3">
+              <label for="listingTitle" class="form-label fw-bold text-stroke"
+                >Title*</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="listingTitle"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label
+                for="listingDescription"
+                class="form-label fw-bold text-stroke"
+                >Description</label
+              >
+              <textarea class="form-control" id="listingDescription"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="listingTags" class="form-label fw-bold text-stroke"
+                >Tags</label
+              >
+              <input type="text" class="form-control" id="listingTags" />
+            </div>
+            <div class="mb-3">
+              <label
+                for="listingMediaUrls"
+                class="form-label fw-bold text-stroke"
+                >Media URLs</label
+              >
+              <textarea
+                class="form-control"
+                id="listingMediaUrls"
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="listingEndsAt" class="form-label fw-bold text-stroke"
+                >Ends At*</label
+              >
+              <input
+                type="datetime-local"
+                class="form-control"
+                id="listingEndsAt"
+                required
+              />
+            </div>
+            <div
+              class="text-danger fw-bold text-stroke"
+              id="createListingErrors"
+            ></div>
+            <button
+              id="createListingBtn"
+              type="button"
+              class="btn btn-auction mb-2 fw-bold text-stroke border-white"
+            >
+              Create Listing
+            </button>
+          </form>
         </div>
-      </section>
+      </div>
+
+      <!--codes for filter options and search button-->
+
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="input-group mb-3">
+              <label class="input-group-text fw-bold" for="auctionFilter"
+                >Filter:</label
+              >
+              <select class="form-select fw-bold" id="auctionFilter">
+                <option value="newest">Newest</option>
+                <option value="endingSoon">Oldest</option>
+                <option value="mostBids">Most Bids</option>
+                <option value="leastBids">Least Bids</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <!-- Search bar and button -->
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                id="searchInput"
+                class="form-control fw-bold"
+                placeholder="Search Listing"
+                aria-label="Search auctions"
+                aria-describedby="searchButton"
+              />
+              <button
+                class="btn btn-primary btn-auction fw-bold text-stroke"
+                type="button"
+                id="searchButton"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="listing-container">
         <h2 class="d-flex justify-content-center">All Listings</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="listing-container">
           <div class="col">
             <a href="./single-listing.html">
               <div class="card h-100">
@@ -299,5 +410,6 @@
         </div>
       </div>
     </main>
+    <script type="module" src="./src/js/listings/index.mjs"></script>
   </body>
 </html>
