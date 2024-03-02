@@ -1,6 +1,6 @@
 
 
-function updateLoginbtn() {
+/*function updateLoginbtn() {
     const loginbtn = document.getElementById("loginbtn");
     const accessToken = localStorage.getItem("accessToken");
 
@@ -28,5 +28,5 @@ function updateLoginbtn() {
     }
 }
 
-export { updateLoginbtn};
+export { updateLoginbtn};*/
     
