@@ -1,4 +1,5 @@
-import { API_BASE_URL, ALL_LISTINGS, BID_ON_LISTING } from "../constants.mjs";
+//import { options } from "../components/bearer.mjs";
+import { API_BASE_URL, ALL_LISTINGS, BID_ON_LISTING, accessToken } from "../constants.mjs";
 
 export function placeBid() {
     document.addEventListener("DOMContentLoaded", function () {
@@ -26,7 +27,7 @@ export function placeBid() {
             amount: Number(amount),
         };
 
-        const accessToken = localStorage.getItem("accessToken");
+        //const accessToken = localStorage.getItem("accessToken");
         const urlParams = new URLSearchParams(window.location.search);
         const listingID = urlParams.get("listingId");
         if (!listingID) {
@@ -66,7 +67,7 @@ export function placeBid() {
                     bidError.textContent = errorMessage;
                 }
             } else {
-                console.log("Error placing Bid:", error.message);
+                console.error("Error placing Bid:", error.message);
                 alert(error.message);
             }
         });

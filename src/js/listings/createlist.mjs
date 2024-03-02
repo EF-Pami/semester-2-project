@@ -1,37 +1,3 @@
-/*import { API_BASE_URL } from "../constants.mjs";
-import { ALL_LISTINGS } from "../constants.mjs";
-
-export async function newlisting (Listtitle, Listcontent, accessToken) {
-    try {
-        const listData = {
-            title: Listtitle,
-            body: Listcontent,
-        };
-
-        if (!accessToken) {
-            return;
-        }
-
-        const response = await fetch (`${API_BASE_URL}${ALL_LISTINGS}`, {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${accessToken}`,
-            },
-            body: JSON.stringify (listData),
-        });
-
-        if (response.ok) {
-            const newPost = await response.json();
-            window.location.href = '/listings.hmtl';
-            return newPost
-        } else {
-            return null;
-        }
-    } catch (error) {
-        return null;
-    }
-}*/
 
 export async function createListing() {
     const TitleInput = document.getElementById("listingTitle");
@@ -40,10 +6,10 @@ export async function createListing() {
     const mediaInput = document.getElementById("listingMediaUrls");
     const enddateInput = document.getElementById("listingEndsAt");
 
-    const title = TitleInput.Value;
-    const description = descriptionInput.Value;
-    const tags = tagInput.Value.split(",").map((tag) => tag.trim());
-    const mediaurl = mediaInput.Value.split('\n').map(url => ({ url: url.trim(), alt: "Auction item image"}));
+    const title = TitleInput.value;
+    const description = descriptionInput.value;
+    const tags = tagInput.value.split(",").map((tag) => tag.trim());
+    const mediaurl = mediaInput.value.split('\n').map(url => ({ url: url.trim(), alt: "Auction item image"}));
     const enddate = enddateInput.value;
 
     const listingData = {
