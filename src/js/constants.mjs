@@ -31,3 +31,5 @@ export const listingsparams = "?_seller=true&_bids=true&_active=true&sort=create
 
 //page elements
 export const errorContainer = document.querySelector(".invalid-feedback content-font");
+
+export const accessToken = localStorage.getItem("accessToken");

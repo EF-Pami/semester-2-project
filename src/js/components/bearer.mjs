@@ -1,9 +1,9 @@
 import * as storage from "../storage/index.mjs";
 
-const jwt = storage.load("jwt");
+const accessToken = storage.load("accessToken");
 
 export const options = {
     headers: {
-        Authorization: `Bearer ${jwt}`,
+        Authorization: `Bearer ${accessToken}`,
     },
 };

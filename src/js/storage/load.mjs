@@ -1,9 +1,9 @@
 import { save } from "./save.mjs";
 
-export const load = (key) => {
-    let item = JSON.parse(localStorage.getItem(key));
+export const load = (accessToken) => {
+    let item = JSON.parse(localStorage.getItem(accessToken));
     if (!item) {
-        item =save(key, []);
+        item =save(accessToken, []);
     }
     return item;
 };
