@@ -67,30 +67,25 @@
                 >
               </li>
               <li class="navbar-item">
-                <a href="#soon to finish Listings" class="nav-link text-black"
+                <a href="listings.html#createForm" class="nav-link text-black"
                   >Add new listing</a
                 >
               </li>
               <hr />
               <!-- Horizontal line -->
               <li class="navbar-item">
-                <a href="#soon to finish Listings" class="nav-link text-black"
-                  >Log out</a
-                >
+                <a href="../index.html" class="nav-link text-black">Log out</a>
               </li>
             </div>
           </ul>
         </div>
         <div id="head-icons">
           <form class="d-flex">
-            <a class="nav-icons" href="./profile/index.html">
+            <a class="nav-icons" href="../listings.html#createForm">
               <img src="../assets/Group 60.jpg" alt="Add listing icon" />
             </a>
-            <a class="nav-icons" href="./profile/index.html">
-              <img src="../assets/Group 18.jpg" alt="credit icon" />
-            </a>
-            <a class="nav-icons" href="./profile/index.html">
-              <img src="../assets/Group 19.jpg" alt="profile icon" />
+            <a class="nav-icons" href="../listings.html">
+              <img src="../assets/All items category.jpg" alt="All listings" />
             </a>
             <a class="nav-icons" href="./index.html">
               <button class="btn btn-primary" id="logout-btn" type="button">
@@ -98,150 +93,213 @@
               </button>
             </a>
           </form>
-
-          <form class="d-flex">
-            <a class="nav-icons" href="./listings.html">
-              <img src="../assets/All items category.jpg" alt="All listings" />
-            </a>
-            <a class="nav-icons" href="#Popular Listings">
-              <img src="../assets/Popular items category.jpg" alt="" />
-            </a>
-            <a class="nav-icons" href="#soon to finish Listings">
-              <img src="../assets/Finish soon category.jpg" alt="" />
-            </a>
-          </form>
         </div>
       </nav>
     </header>
 
     <main>
-      <h1>My Profile</h1>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="col-sm-3">
-            <img
-              src="../assets/avatar pp.jpg"
-              class="rounded-circle"
-              alt="profile avatar"
-              style="width: 190px"
-            />
-          </div>
-          <div>
-            <p>Eldorado</p>
-          </div>
-          <div>
-            <p>Credit:2500</p>
-          </div>
-          <div>
-            <button
-              type="button"
-              class="btn btn-primary mt-3 mb-5 content-font"
-            >
-              Add new listing
-            </button>
-          </div>
-          <div>
-            <button
-              type="button"
-              class="btn btn-primary mt-3 mb-5 content-font"
-            >
-              Edit Profile
-            </button>
-          </div>
-        </div>
-        <div class="col-md-8">
-          <div>
-            <h3>My Listings</h3>
-          </div>
-          <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-              <div class="card h-100">
-                <img
-                  src="../assets/car 1.jpg"
-                  alt="car for auction"
-                  class="card-img-top img-fluid"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Nice Family Car</h5>
-                  <p>Bid price: 5000$</p>
-                  <p>Expires in: 2d 5h</p>
+      <div class="container-md mt-5">
+        <div class="card col-md-8 rounded-4">
+          <div class="container mb-2">
+            <div class="container mt-4 text-center">
+              <h1>My Profile</h1>
+              <div class="mt-4">
+                <div
+                  class="d-flex flex-column justify-content-center align-items-center img-fluid"
+                >
+                  <img
+                    src="../assets/avatar pp.jpg"
+                    class="rounded-circle img-fluid img-thumbnail"
+                    id="userAvatar"
+                    alt="profile avatar"
+                    style="width: 190px"
+                  />
+                </div>
+                <div>
+                  <p id="UserName" class="fw-bold" style="font-size: 20px">
+                    Eldorado
+                  </p>
+                </div>
+                <div
+                  class="d-flex align-items-end"
+                  data-bs-toggle="modal"
+                  data-bs-target="#editAvatarModal"
+                >
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                  >
+                    Edit Avatar
+                  </button>
                 </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="card h-100">
-                <img
-                  src="../assets/neck massager.jpg"
-                  alt="car for auction"
-                  class="card-img-top img-fluid"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Neck Massager</h5>
-                  <p>Bid price: 300$</p>
-                  <p>Expires in: 1d 6h</p>
+
+              <div class="col-md-12 border rounded-4 border-grey mt-4 p-0">
+                <div
+                  class="container mt-4 d-flex flex-column align-items-center"
+                >
+                  <div class="d-flex justify-content-center align-items-center">
+                    <div>
+                      <img src="../assets/Group 18.jpg" alt="credits icon" />
+                    </div>
+                    <h3 class="text-black" id="creditsProfilePage">
+                      Available Credits: xxx$
+                    </h3>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100">
-                <img
-                  src="../assets/dinning table.jpg"
-                  alt="car for auction"
-                  class="card-img-top"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">White dinning chairs</h5>
-                  <p>Bid price: 400$</p>
-                  <p>Expires in: 4d 2h</p>
+
+                <div>
+                  <div>
+                    <p class="mt-3" id="bio">Good dearler in auction sales</p>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <h3>My Bids</h3>
-          </div>
-          <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-              <div class="card h-100">
-                <img
-                  src="../assets/TV bench.jpg"
-                  alt="TV bench for auction"
-                  class="card-img-top"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">TV bench</h5>
-                  <p>Bid price: 60$</p>
-                  <p>Expires in: 4d 2h</p>
+                <div
+                  class="modal"
+                  id="editAvatarModal"
+                  tabindex="-1"
+                  aria-labelledby="EditAvatarModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5
+                          class="modal-title fw-bold text-stroke"
+                          id="updateModalLabel"
+                        >
+                          Edit Avatar URL
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <!-- Edit Form -->
+                        <form id="editForm">
+                          <div class="mb-3">
+                            <label for="UpdateAvatar" class="form-label"
+                              >New Avatar URL</label
+                            >
+                            <input
+                              type="url"
+                              class="form-control"
+                              id="UpdateAvatar"
+                              name="avatar"
+                              placeholder="New URL to avatar IMG"
+                            />
+                          </div>
+                          <button
+                            type="submit"
+                            class="btn btn-primary btn-login fw-bold text-stroke"
+                          >
+                            Submit
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="col">
-              <div class="card h-100">
-                <img
-                  src="../assets/vegetable machine.jpg"
-                  alt="vegetable cutter for auction"
-                  class="card-img-top"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Vegetable cutting machine</h5>
-                  <p>Bid price: 50$</p>
-                  <p>Expires in: 5d 1h</p>
+            <div>
+              <h3 class="text-center">My Listings</h3>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <div class="col">
+                <div class="card h-100">
+                  <img
+                    src="../assets/car 1.jpg"
+                    alt="car for auction"
+                    class="card-img-top img-fluid"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Nice Family Car</h5>
+                    <p>Bid price: 5000$</p>
+                    <p>Expires in: 2d 5h</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100">
+                  <img
+                    src="../assets/neck massager.jpg"
+                    alt="car for auction"
+                    class="card-img-top img-fluid"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Neck Massager</h5>
+                    <p>Bid price: 300$</p>
+                    <p>Expires in: 1d 6h</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100">
+                  <img
+                    src="../assets/dinning table.jpg"
+                    alt="car for auction"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">White dinning chairs</h5>
+                    <p>Bid price: 400$</p>
+                    <p>Expires in: 4d 2h</p>
+                  </div>
                 </div>
               </div>
             </div>
+            <div>
+              <h3 class="text-center">My Bids</h3>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <div class="col">
+                <div class="card h-100">
+                  <img
+                    src="../assets/TV bench.jpg"
+                    alt="TV bench for auction"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">TV bench</h5>
+                    <p>Bid price: 60$</p>
+                    <p>Expires in: 4d 2h</p>
+                  </div>
+                </div>
+              </div>
 
-            <div class="col">
-              <div class="card h-100">
-                <img
-                  src="../assets/samsung S23 Ultra.jpg"
-                  alt="samsung galaxy ultra for auction"
-                  class="card-img-top"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">samsung S23 Ultra</h5>
-                  <p>Bid price: 600$</p>
-                  <p>Expires in: 3d 6h</p>
+              <div class="col">
+                <div class="card h-100">
+                  <img
+                    src="../assets/vegetable machine.jpg"
+                    alt="vegetable cutter for auction"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Vegetable cutting machine</h5>
+                    <p>Bid price: 50$</p>
+                    <p>Expires in: 5d 1h</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card h-100">
+                  <img
+                    src="../assets/samsung S23 Ultra.jpg"
+                    alt="samsung galaxy ultra for auction"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">samsung S23 Ultra</h5>
+                    <p>Bid price: 600$</p>
+                    <p>Expires in: 3d 6h</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -249,5 +307,6 @@
         </div>
       </div>
     </main>
+    <script type="module" src="../src/js/profile/index.mjs"></script>
   </body>
 </html>
