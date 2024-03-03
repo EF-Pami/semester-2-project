@@ -1,6 +1,6 @@
 import * as storage from "../storage/index.mjs";
-
-const accessToken = storage.load("accessToken");
+storage();
+const accessToken = localstorage.get("accessToken");
 
 export const options = {
     headers: {

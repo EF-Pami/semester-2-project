@@ -37,7 +37,7 @@ export async function fetchListings (filterType = 'newest') {
             data.data.forEach((listing) => {
                 const card = document.createElement("div");
                 card.classList.add("card");
-                card.style.width = "18rem";
+                card.style.width = "16rem";
         
                 const img = document.createElement("img");
                 img.src = listing.media[0].url;

@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loginForm.addEventListener("submit", function (evt) {
         evt.preventDefault();
 
-        const Auth_Login = API_BASE_URL +API_LOGIN_URL;
+        const Auth_Login = `${API_BASE_URL}${API_LOGIN_URL}`;
 
         const email = document.getElementById("emailLogIn");
         const password = document.getElementById("passwordLoggIn");
@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
         })
 
         .then((data) => {
-            const accessToken = data.accessToken;
-            localStorage.setItem("accessToken", accessToken);
+            //const accessToken = data.accessToken;
+            localStorage.setItem("accessToken", data.accessToken);
             localStorage.setItem("username", data.name);
             localStorage.setItem("avatar", data.avatar);
             localStorage.setItem("banner", data.banner);
