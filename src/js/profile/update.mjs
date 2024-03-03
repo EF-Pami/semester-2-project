@@ -1,4 +1,5 @@
 import { API_BASE_URL, ALL_PROFILES } from "../constants.mjs";
+import { API_KEY } from "../components/apikeymodel.mjs";
 
 export async function EditAvatar() {
     document.addEventListener("DOMContentLoaded", function () {
@@ -16,12 +17,14 @@ export async function EditAvatar() {
 
                 const name = localStorage.getItem("userName");
                 const accessToken = localStorage.getItem("accessToken");
+                const apiKey = API_KEY;
 
                 fetch(API_BASE_URL + ALL_PROFILES + "/" + name, {
                     method: "PUT",
                     body: JSON.stringify(userData),
                     headers: {
                         "Content-Type": "application/json",
+                        "X-Noroff-API-Key": apiKey,
                         Authorization: `Bearer ${accessToken}`,
                     },
                 })

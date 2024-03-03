@@ -33,14 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
             return response.json();
         })
 
-        .then((data) => {
+        .then((response) => {
             //const accessToken = data.accessToken;
-            localStorage.setItem("accessToken", data.accessToken);
-            localStorage.setItem("username", data.name);
-            localStorage.setItem("avatar", data.avatar);
-            localStorage.setItem("banner", data.banner);
-            localStorage.setItem("IsloggedIn", "true");
-            localStorage.setItem("credits", data.credits);
+            localStorage.setItem("accessToken", response.data.accessToken);
+            localStorage.setItem("username", response.data.name);
+            localStorage.setItem("avatar", response.data.avatar.url);
+            localStorage.setItem("banner", response.data.banner);
+            localStorage.setItem("credits", response.data.credits);
             window.location.href = "/listings.html";
         })
         .catch((error) => {

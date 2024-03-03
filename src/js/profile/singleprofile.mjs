@@ -1,8 +1,10 @@
 import { API_BASE_URL, ALL_PROFILES } from "../constants.mjs";
+import { API_KEY } from "../components/apikeymodel.mjs";
 
 export async function UserInformaion() {
     try {
         const accessToken = localStorage.getItem("accessToken");
+        const apiKey = API_KEY;
         const userName = localStorage.getItem("userName");
 
         if (!userName) {
@@ -13,6 +15,7 @@ export async function UserInformaion() {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
+                "X-Noroff-API-Key": apiKey,
                 Authorization: `Bearer ${accessToken}`,
             },
         };

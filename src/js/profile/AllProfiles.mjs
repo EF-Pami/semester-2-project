@@ -3,6 +3,7 @@ import { API_BASE_URL, ALL_PROFILES } from "../constants.mjs";
 export async function fetchAllProfiles() {
     try {
         const accessToken = localStorage.getItem("accessToken");
+        const apiKey = localStorage.getItem("api_key");
         let currentPage = 1;
 
         async function fetchPage(page) {
@@ -10,6 +11,7 @@ export async function fetchAllProfiles() {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
+                    "X-Noroff-API-Key": apiKey,
                     Authorization: `Bearer ${accessToken}`,
                 },
             };

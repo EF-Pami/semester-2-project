@@ -1,12 +1,15 @@
 import { API_BASE_URL, ALL_LISTINGS } from "../constants.mjs";
 import { hideCreateList } from "../utils/hideCreateList.mjs";
+import { API_KEY } from "../components/apikeymodel.mjs";
 
 export async function fetchListings (filterType = 'newest') {
     try {
+        const apiKey = API_KEY;
         const options = {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
+                "X-Noroff-API-Key": apiKey,
             },
         };
         const response = await fetch(API_BASE_URL + ALL_LISTINGS, options);

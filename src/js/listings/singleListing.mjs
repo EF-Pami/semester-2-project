@@ -3,6 +3,7 @@ import { UserCredits } from "../utils/usercredit.mjs";
 import { userProfileAvatar } from "../utils/userAvatar.mjs";
 import { logout, manageLoginButton } from "../api/auth/logout.mjs";
 import { placeBid } from "./createBid.mjs";
+import { API_KEY } from "../components/apikeymodel.mjs";
 
 placeBid();
 UserCredits();
@@ -19,11 +20,12 @@ export async function fetchSingleListing() {
             console.error("Listing Id not found");
             return;
         }
-
+        const apiKey = API_KEY;
         const options = {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
+                "X-Noroff-API-Key": apiKey,
             },
         };
 

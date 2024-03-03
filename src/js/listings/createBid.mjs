@@ -1,5 +1,6 @@
-//import { options } from "../components/bearer.mjs";
-import { API_BASE_URL, ALL_LISTINGS, BID_ON_LISTING, accessToken } from "../constants.mjs";
+
+import { API_BASE_URL, ALL_LISTINGS, BID_ON_LISTING} from "../constants.mjs";
+import { API_KEY } from "../components/apikeymodel.mjs";
 
 export function placeBid() {
     document.addEventListener("DOMContentLoaded", function () {
@@ -27,7 +28,8 @@ export function placeBid() {
             amount: Number(amount),
         };
 
-        //const accessToken = localStorage.getItem("accessToken");
+        const accessToken = localStorage.getItem("accessToken");
+        const apiKey = API_KEY;
         const urlParams = new URLSearchParams(window.location.search);
         const listingID = urlParams.get("listingId");
         if (!listingID) {
@@ -41,7 +43,8 @@ export function placeBid() {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
-                'Authorization': `Bearer ${accessToken}`,
+                "X-Noroff-API-Key": apiKey,
+                Authorization: `Bearer ${accessToken}`,
             },
             body: JSON.stringify(bidData),
         })

@@ -1,3 +1,4 @@
+import { API_KEY } from "../components/apikeymodel.mjs";
 
 export async function createListing() {
     const TitleInput = document.getElementById("listingTitle");
@@ -21,13 +22,15 @@ export async function createListing() {
     };
 
     const accessToken = localStorage.getItem("accessToken");
-    const BASE_URL = "https://v2.noroff.dev";
+    const apiKey = API_KEY;
+    const BASE_URL = "https://v2.api.noroff.dev";
     const LISTING_URL = "/auction/listings";
 
     fetch(BASE_URL + LISTING_URL, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
+            "X-Noroff-API-Key": apiKey,
             Authorization: `Bearer ${accessToken}`,
         },
         body: JSON.stringify(listingData),

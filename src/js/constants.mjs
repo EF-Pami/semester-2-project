@@ -12,6 +12,7 @@ export const ALL_PROFILES = "/auction/profiles";
 export const SINGLE_PROFILE = "/auction/profiles/<name>";
 export const ALL_LISTINGS_BY_PROFILES = "/auction/profiles/<name>/listings";
 export const SEARCH_LISTINGS = "/auction/listings/search";
+export const API_KEY_MODEL = "/auth/create-api-key"
 
 
 //Forms
